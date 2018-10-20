@@ -10,22 +10,34 @@ document.onkeyup = function(event) {
     // var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
     console.log("userGuess "+ userGuess)
 
+    
+
     if (computerChoices.includes(userGuess)) {
         if (userGuess === computerGuess) {
-            playerWinsins++;
+            playerWins++;
             Guesses =9;
             choices = [];
+            console.log
         }
+       
     if (userGuess != computerGuess) {
         Guesses --;
         choices.push(userGuess);
+        console.log
     }
 
     if (Guesses === 0) {
         Guesses = 9;
-        playerLosses ++;
+        playerLosses --;
         Guesses = [];
+        console.log
     }
+
+
+    document.getElementById("win").textcontent = playerWins;
+    document.getElementById("loss").textcontent = playerLosses;
+    document.getElementById("left").textcontent = Guesses;
+    document.getElementById("far").textcontent = choices;
 }
 
 }
